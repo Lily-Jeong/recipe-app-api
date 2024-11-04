@@ -387,7 +387,10 @@ class PrivateRecipeApiTests(TestCase):
 
     def test_filter_by_tags(self):
         """Test filtering recipes by tags."""
-        r1 = create_recipe(user=self.user, title='Authentic Italian Tomato Spaghetti')
+        r1 = create_recipe(
+            user=self.user,
+            title='Authentic Italian Tomato Spaghetti'
+        )
         r2 = create_recipe(user=self.user, title='One Pan Bongole Pasta')
         tag1 = Tag.objects.create(user=self.user, name='Italian')
         tag2 = Tag.objects.create(user=self.user, name='Pasta')
@@ -409,7 +412,10 @@ class PrivateRecipeApiTests(TestCase):
         """Test filtering recipes by ingredients."""
         r1 = create_recipe(user=self.user, title='Tiramisu')
         r2 = create_recipe(user=self.user, title='Pistachio Gelato')
-        in1 = Ingredient.objects.create(user=self.user, name='Mascarpone Cheese')
+        in1 = Ingredient.objects.create(
+            user=self.user,
+            name='Mascarpone Cheese'
+        )
         in2 = Ingredient.objects.create(user=self.user, name='Heavy Cream')
         r1.ingredients.add(in1)
         r2.ingredients.add(in2)
